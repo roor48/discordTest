@@ -1,8 +1,5 @@
-import json
 from discord_webhook import DiscordWebhook
 
-
-with open("./apiKey.json", 'r') as file:
-    webhookUrl = json.load(file)
+webhookUrl = open(r"./apiKey.txt", 'r').readline()
 webhook = DiscordWebhook(url=webhookUrl, content = ':toolbox:')
 response = webhook.execute()
